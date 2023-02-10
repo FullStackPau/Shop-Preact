@@ -5,6 +5,9 @@
   font-family: sans-serif;
   color: black;
 }
+.home {
+  fill: white;
+}
 .container {
   width: 100vw;
   min-height: 80vh;
@@ -80,4 +83,21 @@ input[type="text"] {
 }
 a {
   text-decoration: none;
+}
+button {
+  width: 100px;
+  height: 40px;
+  background: rgb(255, 208, 0);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  color: white;
+  cursor: pointer;
+}
+.loader {
+  width: 100vw;
+  height: 20vh;
+  padding-top: 30px;
+  display: inline-flex;
+  justify-content: center;
 }

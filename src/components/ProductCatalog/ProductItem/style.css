@@ -27,18 +27,16 @@
   overflow: hidden;
   margin-top: 5px;
 }
-button {
-  width: 100px;
-  height: 40px;
-  background: rgb(255, 208, 0);
-  border: none;
-  border-radius: 5px;
-  margin-left: auto;
+.rowoptions {
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   margin-top: auto;
-  font-size: 1.2em;
-  color: white;
-  cursor: pointer;
 }
+
 button:hover {
   background: rgb(255, 238, 160);
 }

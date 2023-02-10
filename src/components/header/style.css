@@ -15,21 +15,39 @@ header {
 }
 .listproducts {
   width: 300px;
-  height: 400px;
+  height: 200px;
   position: absolute;
   margin-left: auto;
   margin-top: 60px;
   right: 0;
   top: 0;
   overflow-y: auto;
+  background: white;
+  border: 1px solid rgb(189, 189, 189);
 }
 .itemproductcart {
   width: 100%;
   min-height: 40px;
-  background: grey;
+
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+}
+.itemtitle {
+  width: 240px;
+  height: auto;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+.deleteitem {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  cursor: pointer;
 }
