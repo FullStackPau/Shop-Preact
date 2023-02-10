@@ -6,7 +6,7 @@ import { HiShoppingCart, HiX } from "react-icons/hi";
 
 import style from "./style.css";
 
-const Header = () => {
+function Header() {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const getItemsCart = () => {
@@ -37,25 +37,21 @@ const Header = () => {
       {showCart ? (
         <div className={style.listproducts}>
           {cart.length > 0 ? (
-            cart.map((item) => {
-              return (
-                <div className={style.itemproductcart}>
-                  <Link href={`/details/${item.id}`}>
-                    <div className={style.itemtitle}>{item.title}</div>
-                  </Link>
+            cart.map((item) => (
+              <div className={style.itemproductcart}>
+                <Link href={`/details/${item.id}`}>
+                  <div className={style.itemtitle}>{item.title}</div>
+                </Link>
 
-                  <div
-                    className={style.deleteitem}
-                    value={item.id}
-                    onClick={(e) =>
-                      deleteItemCart(e.target.getAttribute("value"))
-                    }
-                  >
-                    x
-                  </div>
+                <div
+                  className={style.deleteitem}
+                  value={item.id}
+                  onClick={(e) => deleteItemCart(e.target.getAttribute("value"))}
+                >
+                  x
                 </div>
-              );
-            })
+              </div>
+            ))
           ) : (
             <div>There isn't any item</div>
           )}
@@ -63,6 +59,6 @@ const Header = () => {
       ) : null}
     </header>
   );
-};
+}
 
 export default Header;
