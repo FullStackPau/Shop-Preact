@@ -1,25 +1,68 @@
-import { h } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style.css';
+import { h } from "preact";
+import { useState, useEffect } from "preact/hooks";
+import { Link } from "preact-router/match";
 
-const Header = () => (
-	<header class={style.header}>
-		<a href="/" class={style.logo}>
-			<img src="../../assets/preact-logo-inverse.svg" alt="Preact Logo" height="32" width="32" />
-			<h1>Preact CLI</h1>
-		</a>
-		<nav>
-			<Link activeClassName={style.active} href="/">
-				Home
-			</Link>
-			<Link activeClassName={style.active} href="/profile">
-				Me
-			</Link>
-			<Link activeClassName={style.active} href="/profile/john">
-				John
-			</Link>
-		</nav>
-	</header>
-);
+import { HiShoppingCart, HiX } from "react-icons/hi";
+
+import style from "./style.css";
+
+const Header = () => {
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+  const getItemsCart = () => {
+    console.log("works");
+    const list = JSON.parse(localStorage.getItem("cart"));
+    console.log(list);
+    setCart(list);
+  };
+  const deleteItemCart = (id) => {
+    const list = JSON.parse(localStorage.getItem("cart"));
+    const newlist = list.filter((product) => product.id != id);
+    console.log(newlist);
+    localStorage.setItem("cart", JSON.stringify(newlist));
+    setCart(newlist);
+  };
+  useEffect(() => {
+    getItemsCart();
+  }, [showCart]);
+  return (
+    <header>
+      <span>INDITEX</span>
+      <div
+        className={style.shoppingcart}
+        onClick={() => setShowCart(!showCart)}
+      >
+        <HiShoppingCart />
+      </div>
+      {showCart ? (
+        <div className={style.listproducts}>
+          {cart.length > 0 ? (
+            cart.map((item) => {
+              return (
+                <div className={style.itemproductcart}>
+                  <Link href={`/details/${item.id}`}>
+                    <div className={style.itemtitle}>{item.title}</div>
+                  </Link>
+
+                  <div
+                    className={style.deleteitem}
+                    value={item.id}
+                    onClick={(e) =>
+                      deleteItemCart(e.target.getAttribute("value"))
+                    }
+                  >
+                    x
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div>There isn't any item</div>
+          )}
+        </div>
+      ) : null}
+    </header>
+  );
+};
 
 export default Header;

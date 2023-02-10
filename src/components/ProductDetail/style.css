@@ -1,0 +1,97 @@
+.detail {
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.column {
+  width: 300px;
+  height: auto;
+  margin: 30px;
+}
+.column:first-child {
+  width: 100%;
+  max-width: 400px;
+  max-height: 200px;
+}
+.image {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.description > p {
+  margin-top: 5px;
+}
+.image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+h4 {
+  margin-right: auto;
+}
+.description {
+  width: 300px;
+  min-height: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.description > h3 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+.price {
+  display: inline-flex;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+.pricewhole {
+  font-size: 2em;
+}
+.pricesymbol {
+  font-size: 1.2em;
+  margin-top: 4px;
+}
+ul {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 20px;
+}
+.actions {
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.actionslist {
+  width: 160px;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.squareaction {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.largeaction {
+  width: 200px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}

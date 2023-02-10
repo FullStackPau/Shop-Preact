@@ -1,4 +1,9 @@
-import './style';
-import App from './components/app';
+import { StrictMode } from "react";
+import "./style";
+import App from "./components/app";
 
-export default App;
+export default () => (
+  <StrictMode>
+    <App />
+  </StrictMode>
+);

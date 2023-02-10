@@ -1,0 +1,9 @@
+.layout {
+  width: 100vw;
+  min-height: 100vh;
+  background: grey;
+}
+main {
+  width: 100vw;
+  min-height: 100px;
+}
