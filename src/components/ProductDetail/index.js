@@ -4,7 +4,6 @@ import { Link } from "preact-router";
 import style from "./style.css";
 const ProductDetail = (props) => {
   const { details } = props;
-
   return (
     <div className={style.detail}>
       <div className="back">
@@ -26,7 +25,7 @@ const ProductDetail = (props) => {
           <p>{details.description}</p>
           <div className={style.price}>
             <span className={style.pricewhole}>{details.price}</span>
-            <span className={style.pricefraction}>99</span>
+
             <span className={style.pricesymbol}>€</span>
           </div>
         </div>

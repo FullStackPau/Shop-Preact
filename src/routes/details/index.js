@@ -24,11 +24,17 @@ const Details = ({ id }) => {
   return (
     <div className="container">
       <div className="headercontainer">
-        <Link to={`/`}>
-          <h3>/{data.category}</h3>
-        </Link>
+        <div className="titleheader">
+          <Link to={`/`}>
+            <h3>/{data.category}</h3>
+          </Link>
+        </div>
       </div>
-      <ProductDetail details={data} />
+      {status === "loading" ? (
+        <p>Loading Products</p>
+      ) : (
+        <ProductDetail details={data} />
+      )}
     </div>
   );
 };

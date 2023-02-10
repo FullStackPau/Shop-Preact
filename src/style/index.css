@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  color: black;
 }
 .container {
   width: 100vw;
@@ -33,6 +34,10 @@ input[type="text"] {
 }
 .titleheader {
   font-size: 1em;
+  color: white;
+}
+.titleheader h3 {
+  color: white;
 }
 .search {
   display: inline-flex;

@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <div className="container">
       <div className="headercontainer">
-        <div className="titleheader">All Products</div>
+        <div className="titleheader">
+          <h3>All Products</h3>
+        </div>
         <div className="search">
           <input type="text" placeholder="search" />
           <HiSearch />
