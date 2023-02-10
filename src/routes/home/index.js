@@ -4,7 +4,7 @@ import { useState } from "preact/hooks";
 
 import ProductCatalog from "../../components/ProductCatalog";
 
-const Home = () => {
+function Home() {
   const [search, setSearch] = useState("");
   return (
     <div className="container">
@@ -23,6 +23,6 @@ const Home = () => {
       <ProductCatalog search={search} />
     </div>
   );
-};
+}
 
 export default Home;

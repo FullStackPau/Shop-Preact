@@ -1,11 +1,10 @@
 import { h } from "preact";
-import { HiArrowLeft, HiOutlineStar } from "react-icons/hi";
+import { HiArrowLeft, HiOutlineStar, HiShoppingCart } from "react-icons/hi";
 import { Link } from "preact-router";
 
-import { HiShoppingCart } from "react-icons/hi";
-
 import style from "./style.css";
-const ProductDetail = (props) => {
+
+function ProductDetail(props) {
   const { details } = props;
 
   const setItemCart = (product) => {
@@ -30,7 +29,7 @@ const ProductDetail = (props) => {
       </div>
       <div className={style.column}>
         <div className={style.image}>
-          <img src={details.image}></img>
+          <img src={details.image} alt="Detail Product" />
         </div>
       </div>
       <div className={style.column}>
@@ -41,23 +40,21 @@ const ProductDetail = (props) => {
             <span className={style.pricewhole}>{details.price}</span>
             <span className={style.pricesymbol}>€</span>
             <div className={style.largeaction}>
-              {[...Array(5)].map((_, index) => {
-                return (
-                  <HiOutlineStar
-                    size={25}
-                    style={{
-                      color: "black",
-                      fill:
-                        details.rating.rate >= index + 1
-                          ? "rgb(255, 230, 0)"
-                          : "white",
-                    }}
-                  />
-                );
-              })}
+              {[...Array(5)].map((_, index) => (
+                <HiOutlineStar
+                  size={25}
+                  style={{
+                    color: "black",
+                    fill:
+                      details.rating.rate >= index + 1
+                        ? "rgb(255, 230, 0)"
+                        : "white",
+                  }}
+                />
+              ))}
             </div>
           </div>
-          <button>Buy</button>
+          <button type="button">Buy</button>
         </div>
         <div className={style.actions}>
           <h4>Actions</h4>
@@ -68,14 +65,14 @@ const ProductDetail = (props) => {
             >
               <HiShoppingCart size={30} className="cart" />
             </div>
-            <div className={style.squareaction}></div>
-            <div className={style.squareaction}></div>
-            <div className={style.squareaction}></div>
-            <div className={style.squareaction}></div>
+            <div className={style.squareaction} />
+            <div className={style.squareaction} />
+            <div className={style.squareaction} />
+            <div className={style.squareaction} />
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 export default ProductDetail;
